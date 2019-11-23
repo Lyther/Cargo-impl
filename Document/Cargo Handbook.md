@@ -20,6 +20,12 @@ Cargo benchmark data : https://github.com/jamjpan/Cargo_benchmark
 
 
 
+
+
+
+
+
+
 ## 1. Read Data From File
 
 ### Read Nodes and Edges
@@ -73,6 +79,12 @@ The content of the file should be like this:
 
 
 
+
+
+
+
+
+
 ## 2. Use gnuplot to Draw The Network
 
 ### Install gnuplot
@@ -93,6 +105,12 @@ Input the command below to draw `bj5.rnet` network.
 
 
 
+
+
+
+
+
+
 ## 3. RSAlgorithm Development
 
 ### Data structure 
@@ -105,11 +123,77 @@ The hash value of a vehicle in the grid is computed by its last visited node.
 
 
 
+### Framework
+
+```C++
+while(active):
+	listen();
+	for each vehicle():
+		handle_vehicle();
+	for each customer():
+		handle_customer();
+	match:
+		//Match logic
+	Sleep until next batch
+```
+
+There are four virtual function may need to be override
+
+##### listen
+
+```C++
+virtual void listen(bool skip_assigned = true, bool skip_delayed = true);
+```
+
+Polls for active vehicles and waiting customers at a configurable interval, storing them locally.
+
+
+
+##### handle_customer
+
+```C++
+virtual void handle_customer(const Customer &);
+```
+
+Executed automatically on every customer that is polled via **listen()**.
+
+
+
+**handle_vehicle**
+
+```C++
+virtual void handle_vehicle(const Vehicle &);
+```
+
+Executed automatically on every vehicle that is polled via **listen()**.
+
+
+
+**match**
+
+```C++
+virtual void match();
+```
+
+Executed at the end of every **listen()** and can be used for join-based assignment.
+
+
+
+**end**
+
+```C++
+virtual void end();
+```
+
+Execute after the simulation finishes.
+
+
+
 ### Candidate Filtering
 
 Candidates Filtering example:
 
-```c
+```C++
 void NearestNeighbor::handle_customer(const Customer& cust) {
   this->reset_workspace();                  // reset workspace variables
   this->candidates =                        // collect candidates
@@ -121,7 +205,7 @@ void NearestNeighbor::handle_customer(const Customer& cust) {
 
 Function pick_range() is used to calculate the least time that the vehicle need to move **from the origin of the customer to the destination of the customer**. Here is the source code of pick_range() (src/functions.cc):
 
-```C
+```C++
 DistInt pickup_range(const Customer& cust) {
   return Cargo::vspeed() * cust.late() - Cargo::basecost(cust.id()) -
          Cargo::vspeed() * Cargo::now();
@@ -130,7 +214,11 @@ DistInt pickup_range(const Customer& cust) {
 
 
 
-
-
 ### Customer Insertion
+
+Simple Customer Insertion example:
+
+```C++
+sop_insert(*cand, cust, sch, rte, Cargo::gtree())
+```
 
