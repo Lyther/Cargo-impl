@@ -1,0 +1,8 @@
+# 2019/11/23
+Finish:
+- Convertion tool position to json
+- Conversion tool site to json
+- Two demo maps done
+Todo:
+- Campus bus position API seems wrong, I'll contact them
+- Redesign of Cargo and make implementation
