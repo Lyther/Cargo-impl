@@ -1,0 +1,5 @@
+# 2018/11/23
+Finish:
+- Check the SDK needed for algorithm implementation of Cargo, ready to develop algorithm
+Todo:
+- Study the new problem - bus scheduling
