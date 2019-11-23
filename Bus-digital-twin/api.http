@@ -1,0 +1,33 @@
+
+### pretty basic api, no auth required 
+
+### detail 路径点
+GET http://weixin.qianhaixing.cn/weixin/traffic/line/detail/data/13
+
+### list 站点位置
+GET http://weixin.qianhaixing.cn/weixin/traffic/station/list/13
+
+### vehicle 车辆实时位置
+### 欣园站 - 科研楼 / 实际上是所有的车辆的位置
+GET http://weixin.qianhaixing.cn/weixin/traffic/line/vehicle/position/13
+
+### schedule 发车时刻表lo
+GET http://weixin.qianhaixing.cn/weixin/traffic/line/schedule/data/13
+
+# ### 科研楼 - 欣园站
+# GET http://weixin.qianhaixing.cn/weixin/traffic/line/vehicle/position/14
+
+# ### 智园线：智园站 - 教工餐厅站 
+# GET http://weixin.qianhaixing.cn/weixin/traffic/line/vehicle/position/32
+
+# ### 高峰线：欣园站 - 科研楼
+# GET http://weixin.qianhaixing.cn/weixin/traffic/line/vehicle/position/30
+
+# ### 高峰线：科研楼 - 欣园站
+# GET http://weixin.qianhaixing.cn/weixin/traffic/line/vehicle/position/31
+
+# ### 集悦城线：荔园站 - 集悦城A区站
+# GET http://weixin.qianhaixing.cn/weixin/traffic/line/vehicle/position/28
+
+# ### 集悦城线：集悦城B区站 - 慧园站
+# GET http://weixin.qianhaixing.cn/weixin/traffic/line/vehicle/position/29
