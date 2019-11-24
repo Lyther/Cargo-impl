@@ -25,15 +25,37 @@ Be aware in this report, we should introduce our task distribution!
 
 ## Problem Definition
 
-I name our problem of bus schedule problem (BSP), there would be several difference between BSP and RSP, but they still have a lot of commons.
+I name our problem of bus schedule problem (BSP), there would be several differences between BSP and RSP, but they still have a lot of commons.
 
 Differences:
-- the route is constant
-- vehicle doesn't have time window
+
+- the schedule of the vehicle (bus route) is static.
+- vehicles don't have time window
 - bus capacity is much larger than other vehicle
 - edge weight doesn't equal in different directions
+- not every can get in the bus, penalty is needed to measure the quality of the problem solver.
 
 Graph of vertices as stations and edges as route is the same as RSP. This problem also needs online algorithms to solve.
+
+
+
+### Formalization
+
+The route of the buses is fixed. To simplify the problem, every bus use the same route. If a bus arrives at the destination, then it will turn back along with the reverse route, and it will back to the destination when this bus arrives at the origin again.
+
+A customer have a time window $[e, l]$, a customer cannot be picked up before time $e$ and cannot arrives after $l$ (which means if this customer cannot arrive at destination on time, he/she would not get in the bus).
+
+The objective is to maximize the number of satisfactory requests. In another words, we should do our best to meet the expectation of customers as many as possible.
+
+
+
+The problem can be formalized as:
+$$
+\max_{\tau \subseteq T }\sum_{t \in \tau}P(t)
+$$
+where $T$ is a set of time that a bus can depart from its origin, $\tau$ is a set of time we choose to let the bus depart from its origin, while $|\tau| = \#\ of\ buses$. $P$ is the profit function relating to the number of customers that the bus can pick up if a bus depart from time $t$. 
+
+Calculating the profit function is $\#P$. Choosing the time of the first departure time of buses is NP hard.
 
 ----
 
@@ -42,6 +64,7 @@ Graph of vertices as stations and edges as route is the same as RSP. This proble
 The goal of BSP is to arrange time schedule according to already known information.
 The algorithm should plan: `whether or not send a bus`, `which direction of bus`, `*the bus is normal or peak*`, `*how long would bus stops at each station*`.
 The basic concept of algorithm is:
+
 ```Algorithm
 get buses status
 get students number
@@ -49,13 +72,13 @@ analyze and make decision
 update database```
 
 To measure the quality of arrangement, there would be several targets.
-```Total time cost
+​```Total time cost
 Percentage students arrive in time
 Total bus arrange number
 Average students number on bus```
 
 The simulator is based on real data and communicates with algorithm through in-memory database, the architecture of simulator thread is:
-```Simulator
+​```Simulator
 increase time counter
 move buses
 move students
@@ -63,7 +86,7 @@ handle pick up & drop off
 update database```
 
 All the communications are through in-memory database, the data stored and their types are:
-```Database
+​```Database
 buses: id integer, position integer, load integer, capacity integer, status integer, waiting integer array, direction integer, type integer
 students: id integer, position integer, early_time integer, late_time integer, destination integer```
 Here is some description. ID of buses and students is unique identifier. Bus position is an integer indicates the station it here or left, the exact position is unknown, but we can judge the bus can handle pick up or not by using 'status' column. Load is the current number of students on bus, which should not exceed upper bound capacity.
@@ -99,7 +122,7 @@ The data the algorithm can know:
 
 Simulator, algorithm, and database are running parallel as multi-thread. The simulator would read in data and then send them to database. After that, threads are running parallel until the simulation finish.
 I will give a pseudo code here later, the current one is:
-```Simulator
+​```Simulator
 initial & read / write data
 loop:
 	start threads
@@ -129,3 +152,4 @@ Our task distribution and future plans:
 - build up our simulation platform
 - collect data from real bus
 - design algorithm to fit BSP
+```
