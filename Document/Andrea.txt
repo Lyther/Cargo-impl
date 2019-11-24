@@ -4,6 +4,8 @@ Finish:
 - Conversion tool site to json
 - Two demo maps done
 - New version of report
+- Update problem definition and logic
+- Contact university teacher for API
 Todo:
-- Campus bus position API seems wrong, I'll contact them
+- Communicate with data
 - Redesign of Cargo and make implementation

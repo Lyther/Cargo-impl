@@ -37,8 +37,6 @@ Differences:
 
 Graph of vertices as stations and edges as route is the same as RSP. This problem also needs online algorithms to solve.
 
-
-
 ### Formalization
 
 The route of the buses is fixed. To simplify the problem, every bus use the same route. If a bus arrives at the destination, then it will turn back along with the reverse route, and it will back to the destination when this bus arrives at the origin again.
@@ -46,8 +44,6 @@ The route of the buses is fixed. To simplify the problem, every bus use the same
 A customer have a time window $[e, l]$, a customer cannot be picked up before time $e$ and cannot arrives after $l$ (which means if this customer cannot arrive at destination on time, he/she would not get in the bus).
 
 The objective is to maximize the number of satisfactory requests. In another words, we should do our best to meet the expectation of customers as many as possible.
-
-
 
 The problem can be formalized as:
 $$
@@ -73,6 +69,7 @@ update database```
 
 To measure the quality of arrangement, there would be several targets.
 ​```Total time cost
+Percentage students can be picked
 Percentage students arrive in time
 Total bus arrange number
 Average students number on bus```
@@ -152,4 +149,3 @@ Our task distribution and future plans:
 - build up our simulation platform
 - collect data from real bus
 - design algorithm to fit BSP
-```
