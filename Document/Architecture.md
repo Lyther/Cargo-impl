@@ -37,21 +37,23 @@ Differences:
 
 Graph of vertices as stations and edges as route is the same as RSP. This problem also needs online algorithms to solve.
 
-### Formalization
 
-The route of the buses is fixed. To simplify the problem, every bus use the same route. If a bus arrives at the destination, then it will turn back along with the reverse route, and it will back to the destination when this bus arrives at the origin again.
 
-A customer have a time window $[e, l]$, a customer cannot be picked up before time $e$ and cannot arrives after $l$ (which means if this customer cannot arrive at destination on time, he/she would not get in the bus).
+### ~~Formalization~~
 
-The objective is to maximize the number of satisfactory requests. In another words, we should do our best to meet the expectation of customers as many as possible.
+~~The route of the buses is fixed. To simplify the problem, every bus use the same route. If a bus arrives at the destination, then it will turn back along with the reverse route, and it will back to the destination when this bus arrives at the origin again.~~
 
-The problem can be formalized as:
+~~A customer have a time window $[e, l]$, a customer cannot be picked up before time $e$ and cannot arrives after $l$ (which means if this customer cannot arrive at destination on time, he/she would not get in the bus).~~
+
+~~The objective is to maximize the number of satisfactory requests. In another words, we should do our best to meet the expectation of customers as many as possible.~~
+
+~~The problem can be formalized as:~~
 $$
 \max_{\tau \subseteq T }\sum_{t \in \tau}P(t)
 $$
-where $T$ is a set of time that a bus can depart from its origin, $\tau$ is a set of time we choose to let the bus depart from its origin, while $|\tau| = \#\ of\ buses$. $P$ is the profit function relating to the number of customers that the bus can pick up if a bus depart from time $t$. 
+~~where $T$ is a set of time that a bus can depart from its origin, $\tau$ is a set of time we choose to let the bus depart from its origin, while $|\tau| = \#\ of\ buses$. $P$ is the profit function relating to the number of customers that the bus can pick up if a bus depart from time $t$.~~ 
 
-Calculating the profit function is $\#P$. Choosing the time of the first departure time of buses is NP hard.
+~~Calculating the profit function is $\#P$. Choosing the time of the first departure time of buses is NP hard.~~
 
 ----
 
@@ -149,3 +151,4 @@ Our task distribution and future plans:
 - build up our simulation platform
 - collect data from real bus
 - design algorithm to fit BSP
+```
