@@ -87,7 +87,8 @@ update database```
 All the communications are through in-memory database, the data stored and their types are:
 ​```Database
 buses: id integer, position integer, load integer, capacity integer, status integer, waiting integer array, direction integer, type integer
-students: id integer, position integer, early_time integer, late_time integer, destination integer```
+students: id integer, position integer, early_time integer, late_time integer, destination integer
+station: id integer```
 Here is some description. ID of buses and students is unique identifier. Bus position is an integer indicates the station it here or left, the exact position is unknown, but we can judge the bus can handle pick up or not by using 'status' column. Load is the current number of students on bus, which should not exceed upper bound capacity.
 Status -1 means bus doesn't work now, 0 means running on the way, and 1 means it stops at station and waiting. Waiting is an integer array means how long would this bus stops at each station. Direction 0 means Joy Highland to RB1, while 1 means RB1 to Joy Highland. Type 0 means the bus is normal line, and 1 means the bus is peak line.
 Then position of student is the exact number of station the student is. Early_time of student is the earliest time the student can arrive the station, while late_time is the latest time the student should arrive destination. The destination is the number of station the student should go to.
