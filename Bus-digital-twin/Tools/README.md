@@ -15,3 +15,8 @@
 	<lng> <lat>
 	Those data is split by space.
 	Usage: python format.py
+
+- partition.py
+	Partition the combined instance into 2 directions.
+	Usage: python partition.py <instance_file> <line_number>
+	Line number should be 0 indicates from JH to RB, and 1 means inverse.
