@@ -11,6 +11,6 @@ Finish:
 - retrieve course data from TAO
 - data collection part of the Week 12 report
 - data collection part of the Week 12 PPT
-Todo:
 - .instance File Generator (estimation with real course data version)
+Todo:
 - Cargo Web Exploration
