@@ -1,14 +1,16 @@
-# 2019/11/27
+# 2020/01/04
+Deprecated:
+- more precise edge weight representation
+- database handling for needed data
+- retrieve bus location data from bus manager (contact mentor and CS department secretary first)
 Finish:
 - .rnet file for SUSTech school bus network
 - .edges file for SUSTech school bus network
 - .instance File Generator (random version)
 - .instance File Generator (rough estimation version)
 - retrieve course data from TAO
-Todo:
-- more precise edge weight representation
-- .instance File Generator (estimation with real course data version)
-- database handling for needed data
-- retrieve bus location data from bus manager (contact mentor and CS department secretary first)
 - data collection part of the Week 12 report
 - data collection part of the Week 12 PPT
+Todo:
+- .instance File Generator (estimation with real course data version)
+- Cargo Web Exploration
