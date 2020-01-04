@@ -153,3 +153,10 @@ Collecting course schedules from TAO:
 course_time	course_location	course_capacity
 ```
 
+
+
+
+
+## Further Extension
+
+To specify stop time, each stop has an edge pointing to itself, the weight is from 5 to w, where w is the smallest weight from its neighbors
