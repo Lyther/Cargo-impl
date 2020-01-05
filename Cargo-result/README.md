@@ -1,4 +1,4 @@
-### Cargo system result according to school bus data
+# Cargo system result according to school bus data
 
 Current algorithms includes:
 - bilateral_arrangement
@@ -11,14 +11,15 @@ Current algorithms includes:
 - random_join
 - random_search
 - simulated_annealing
+- kinetic_tree
 
 Algorithms don't include:
-- kinetic_tree
 - trip_vehicle_grouping
+	Seems there is something wrong with tunnel, you can run `launcher` and have a try.
 
 ----
 
-### Additional
+## Additional
 
 This directory only includes sol files, but without the whole dat output.
 If you are looking forward detailed result, find them in my directory:
