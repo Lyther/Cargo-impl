@@ -52,5 +52,7 @@ def par_customer(lines, vehicle_number, customer_number, line_number):
 if __name__ == "__main__":
 	if len(sys.argv) != 3:
 		print("Usage: python partition.py <file_name> <line_number>")
+		print("\t<file_name> is the instance file location.")
+		print("\t<line_number> can be 0 or 1, indicate different directions.")
 	else:
 		main(sys.argv[1], int(sys.argv[2]))

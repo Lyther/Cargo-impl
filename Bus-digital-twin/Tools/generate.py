@@ -5,6 +5,8 @@ dat_file = ''
 tot_time = 0
 tot_sta = 0
 
+# This file is used to generate time table from routes.
+
 
 def main():
     bus = numpy.zeros((tot_sta, tot_time), numpy.int)
