@@ -61,7 +61,7 @@ namespace cargo {
 
     bool chktw(const vec_t<Stop> &, const vec_t<Wayp> &);
 
-    bool chksn(const vec_t<Customer> &, const Customer &);
+    bool chksn(const vec_t<CustId> &);
 
     bool chkcap(const Load &, const vec_t<Stop> &);
 

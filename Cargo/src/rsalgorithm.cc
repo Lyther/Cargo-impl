@@ -275,7 +275,8 @@ namespace cargo {
                 return false;
             }
 
-            if (!chksn()) {
+            /* TODO Feature: check social network */
+            if (!chksn(custs_to_add)) {
                 DEBUG(3, {
                     print(MessageType::Error)
                             << "assign() passengers not valid in social network"
@@ -283,8 +284,6 @@ namespace cargo {
                 });
                 return false;
             }
-
-            /* TODO Feature: check social network */
 
             DEBUG(3, {
                 print(MessageType::Info)
