@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
   print_header();
   print_usage();
   Options op;
-  std::string selection, roadnetwork, instance;
+  std::string selection, roadnetwork, instance, socialnetwork;
   bool staticmode = false;
   bool strictmode = false;
   if (argc >= 4 && argc <= 6) {
@@ -84,10 +84,13 @@ int main(int argc, char** argv) {
     std::cin >> roadnetwork;
     std::cout << "Path to instance (*.instance): ";
     std::cin >> instance;
+    std::cout << "Path to social network (*.organization): ";
+    std::cin >> socialnetwork;
   }
 
   op.path_to_roadnet = roadnetwork;
   op.path_to_problem = instance;
+  op.path_to_soclnet = socialnetwork;
   op.static_mode = staticmode;
   op.strict_mode = strictmode;
   Cargo cargo(op);

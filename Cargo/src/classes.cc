@@ -300,6 +300,18 @@ const std::unordered_map<ErlyTime,vec_t<Trip>> & ProblemSet::trips() const {
 }
 
 
+/* SocialNetwork -------------------------------------------------------------*/
+SocialNetwork::SocialNetwork() {}
+
+void SocialNetwork::set_networks(const dict<cargo::SoclId, vec_t<cargo::CustId> > & networks) {
+    networks_ = networks;
+}
+
+const std::unordered_map<SoclId, vec_t<CustId>> & SocialNetwork::networks() const {
+    return networks_;
+}
+
+
 /*****************************************************************************/
 std::ostream& operator<<(std::ostream& os, const Wayp& wp) {
   return os << "(" << wp.first << "," << wp.second << ")";

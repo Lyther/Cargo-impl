@@ -38,10 +38,11 @@ std::pair<std::string, std::string> parse_road_path(const std::string &);
 Speed parse_speed(const std::string &);
 
 /* These functions throw runtime_errors if the file cannot be read. */
-size_t read_nodes(const Filepath &, KVNodes &);                // return # nodes
-size_t read_nodes(const Filepath &, KVNodes &, BoundingBox &); // output bbox
-size_t read_edges(const Filepath &, KVEdges &);                // return # edges
-size_t read_problem(const Filepath &, ProblemSet &);           // return # trips
+size_t read_nodes(const Filepath &, KVNodes &);                     // return # nodes
+size_t read_nodes(const Filepath &, KVNodes &, BoundingBox &);      // output bbox
+size_t read_edges(const Filepath &, KVEdges &);                     // return # edges
+size_t read_problem(const Filepath &, ProblemSet &);                // return # trips
+size_t read_social_network(const Filepath& path, SocialNetwork&);   // return # networks
 
 /* Thread-safe Logger for generating solplot.py input
  * The logger is "event-based"; certain events trigger putting different

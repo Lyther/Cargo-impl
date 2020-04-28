@@ -29,6 +29,7 @@ namespace cargo {
 struct Options {
     Filepath path_to_roadnet = "";
     Filepath path_to_problem = "";
+    Filepath path_to_soclnet = "";
 
     // A multiplier for the ratio between the SimTime and real time. A
     // multiplier of 2, for example, will set one SimTime to be equal to

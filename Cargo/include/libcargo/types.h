@@ -42,6 +42,7 @@ typedef int DestId;
 typedef int TripId;
 typedef int VehlId;
 typedef int CustId;
+typedef int SoclId;
 
 // "Lon/Lat" type-class
 typedef double Lon;

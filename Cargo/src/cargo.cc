@@ -796,6 +796,14 @@ void Cargo::initialize(const Options& opt) {
   }
   print << "\tSpeed set to " << speed_ << " m/s" << std::endl;
 
+  print << "Reading social networks (" << opt.path_to_soclnet << ")... " << std::endl;
+  const size_t nnetworks = read_social_network(opt.path_to_soclnet, soclnet_);
+  if (nnetworks == 0) {
+      print(MessageType::Error) << "Social network file has no networks!\n";
+      throw std::runtime_error("bad");
+  }
+  print << "\t Read " << nnetworks << " networks" << std::endl;
+
   tmin_ = tmax_ = 0;
   matp_ = opt.matching_period;
   sleep_interval_ = std::round((float)1000 / opt.time_multiplier);

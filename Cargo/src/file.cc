@@ -142,6 +142,27 @@ size_t read_problem(const Filepath& path, ProblemSet& probset) {
   return count_trips;
 }
 
+size_t read_social_network(const Filepath& path, SocialNetwork& soclnet) {
+    std::ifstream ifs(path);
+    if (!ifs.good()) throw std::runtime_error("social network path not found");
+    std::unordered_map<SoclId, vec_t<CustId>> networks;
+    std::string _;  // unused
+    size_t n;
+    size_t count_networks = 0;
+    ifs >> _ >> n;
+    ifs >> _;   // skip the blank line
+    std::getline(ifs, _);   // skip the header row
+    SoclId sid;
+    CustId cid;
+    while (ifs >> sid >> cid) {
+        networks[sid].push_back(cid);
+        count_networks++;
+    }
+    ifs.close();
+    soclnet.set_networks(networks);
+    return count_networks;
+}
+
 std::queue<std::string> Logger::queue_;
 std::condition_variable Logger::condition_;
 std::mutex Logger::mutex_;

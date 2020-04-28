@@ -110,6 +110,8 @@ class Cargo {
 
   ProblemSet probset_;
 
+  SocialNetwork soclnet_;
+
   SimlTime tmin_;                           // max trip.early
   SimlTime tmax_;                           // max vehicle.late
   SimlTime matp_;                           // matching pd. (customer timeout)

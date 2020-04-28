@@ -286,6 +286,24 @@ class ProblemSet {
   dict<SimlTime, vec_t<Trip>> trips_;
 };
 
+/* Ridesharing social network.
+ * Corresponds to .organization file in data/benchmarks. ---------------------*/
+class SocialNetwork {
+  public:
+    /* Constructor */
+    SocialNetwork();
+
+    const dict<SoclId, vec_t<CustId>> & networks() const;
+      // return all networks
+
+    /* Networks are organized by their organization id */
+    void set_networks(const dict<SoclId, vec_t<CustId>> &);
+      // store networks
+
+  private:
+    dict<SoclId, vec_t<CustId>> networks_;
+};
+
 std::ostream& operator<<(std::ostream& os, const Wayp &);
 std::ostream& operator<<(std::ostream& os, const vec_t<Wayp> &);
 std::ostream& operator<<(std::ostream& os, const Route &);
