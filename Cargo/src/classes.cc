@@ -208,6 +208,7 @@ Vehicle::Vehicle(
   this->idx_last_visited_node_ = ri;
   this->queued_ = qd;
   this->status_ = f;
+  this->vehl_id_ = vid;
 }
 
 const DistInt    & Vehicle::next_node_distance()    const { return next_node_distance_; }
@@ -216,6 +217,7 @@ const Schedule   & Vehicle::schedule()              const { return schedule_; }
 const RteIdx     & Vehicle::idx_last_visited_node() const { return idx_last_visited_node_; }
 const NodeId     & Vehicle::last_visited_node()     const { return route_.node_at(idx_last_visited_node_); }
 const VehlStatus & Vehicle::status()                const { return status_; }
+const VehlId     & Vehicle::vehicle_id()            const { return vehl_id_; }
       Load         Vehicle::queued()                const { return queued_; }
       Load         Vehicle::capacity()              const { return -load_; }
       DistInt      Vehicle::remaining()             const { return this->route().cost() - this->traveled(); }

@@ -221,6 +221,7 @@ class Vehicle : public Trip {
   const RteIdx     & idx_last_visited_node() const;  // index to last-visit node
   const NodeId     & last_visited_node()     const;  // return last-visit node
   const VehlStatus & status()                const;  // return status
+  const VehlId     & vehicle_id()            const;  // return vehicle id
         DistInt      traveled()              const;  // return distance traveled
         DistInt      remaining()             const;  // return distance remaining
         Load         queued()                const;  // return number queued
@@ -237,6 +238,7 @@ class Vehicle : public Trip {
   RteIdx idx_last_visited_node_;
   Load queued_;
   VehlStatus status_;
+  VehlId vehl_id_;
 };
 
 /* Mutable Vehicle. ----------------------------------------------------------*/

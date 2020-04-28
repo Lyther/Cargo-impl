@@ -275,13 +275,13 @@ namespace cargo {
                 return false;
             }
 
-            /* TODO Feature: check social network */
-            if (!chksn(custs_to_add)) {
+            if (!chksn(vehl.vehicle_id(), custs_to_add)) {
                 DEBUG(3, {
                     print(MessageType::Error)
-                            << "assign() passengers not valid in social network"
+                            << "assign() passengers failed due to social network"
                             << std::endl;
                 });
+                this->nrej_++;
                 return false;
             }
 
