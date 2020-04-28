@@ -176,6 +176,7 @@ class Cargo {
   sqlite3_stmt* mov_stmt;                   // bulk-move vehicles
   sqlite3_stmt* usc_stmt;                   // update schedule, lvn, nnd
   sqlite3_stmt* cwc_stmt;                   // count waiting customers
+  sqlite3_stmt* ssn_stmt;                   // query customers in social network
 
   void construct(const Options &);
   void initialize(const Options &);

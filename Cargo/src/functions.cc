@@ -268,8 +268,11 @@ namespace cargo {
         return true;
     }
 
-    bool chksn(const vec_t<CustId> &) {
+    bool chksn(const vec_t<CustId> &cust, const CustId ncid) {
         /* TODO: check the social network */
+        for (auto i : cust) {
+
+        }
         return true;
     }
 

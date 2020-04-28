@@ -121,6 +121,13 @@ const SqliteQuery create_cargo_tables =
     "visitedAt      int,"
   "primary key (owner, location),"
   "foreign key (location) references nodes(id)"
+  ") without rowid;"
+
+  "create table networks("
+    "organization   int not null,"
+    "customer_id    int not null,"
+  "primary key (organization, customer_id),"
+  "foreign key (customer_id) references customers(id)"
   ") without rowid;";
 
 /* Select statements. --------------------------------------------------------*/
@@ -193,6 +200,10 @@ const SqliteQuery cwc_stmt =  // count waiting customers
   "  and status = ?"    // param1: CustStatus::Waiting
   "  and ? >= early;";  // param2: time now
 
+const SqliteQuery ssn_stmt =  // select social network of organization
+  "select customer_id from networks "
+  "where"
+  "  organization = ?;";    // param1: organization id
 
 /* Update Customers. ---------------------------------------------------------*/
 const SqliteQuery ucs_stmt =  // update customer status

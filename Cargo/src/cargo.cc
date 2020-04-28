@@ -114,6 +114,7 @@ void Cargo::construct(const Options& opt) {
   prepare_stmt(sql::mov_stmt, &mov_stmt);
   prepare_stmt(sql::usc_stmt, &usc_stmt);
   prepare_stmt(sql::cwc_stmt, &cwc_stmt);
+  prepare_stmt(sql::ssn_stmt, &ssn_stmt);
   print(MessageType::Success) << "Cargo initialized!" << std::endl;
 }
 
@@ -137,6 +138,7 @@ Cargo::~Cargo() {
   sqlite3_finalize(mov_stmt);
   sqlite3_finalize(usc_stmt);
   sqlite3_finalize(cwc_stmt);
+  sqlite3_finalize(ssn_stmt);
 
   // NOTE: This only saves a snapshot of the final state
   if (database_file_ != "") {
@@ -1022,6 +1024,37 @@ void Cargo::initialize(const Options& opt) {
       tmin_ = std::max(trip.early(), tmin_);
       tmax_ = std::max(trip.late(), tmax_);
     }
+  }
+  sqlite3_exec(db_, "END", NULL, NULL, &err);
+  print << "\t\tInsertion finished." << std::endl;
+
+  print << "\tInserting networks..." << std::endl;
+  sqlite3_stmt* insert_network_stmt;
+  if (sqlite3_prepare_v2(db_, "insert into networks values(?,?);", -1, &insert_network_stmt, NULL) != SQLITE_OK) {
+    print(MessageType::Error) << "Failed (create insert network stmt). Reason:\n";
+    throw std::runtime_error(sqlite3_errmsg(db_));
+  }
+
+  for (const auto& sn : soclnet_.networks()) {
+      for (const auto& cust : sn.second) {
+          if (sn.first < 0) {
+              print(MessageType::Error) << "Organization " << sn.first << " has an invalid id\n";
+              throw std::runtime_error("bad organization");
+          } else if (cust < 0) {
+              print(MessageType::Error) << "Customer " << cust << " has an invalid id\n";
+              throw std::runtime_error("bad customer");
+          }
+
+          sqlite3_bind_int(insert_network_stmt, 1, sn.first);
+          sqlite3_bind_int(insert_network_stmt, 2, cust);
+          if (sqlite3_step(insert_network_stmt) != SQLITE_DONE) {
+              print(MessageType::Error) << "Failure at organization " << sn.first << "\n";
+              print(MessageType::Error) << "Failure (insert social network). Reason:\n";
+              throw std::runtime_error(sqlite3_errmsg(db_));
+          }
+          sqlite3_clear_bindings(insert_network_stmt);
+          sqlite3_reset(insert_network_stmt);
+      }
   }
   sqlite3_exec(db_, "END", NULL, NULL, &err);
   print << "\t\tInsertion finished." << std::endl;
