@@ -205,6 +205,11 @@ const SqliteQuery ssn_stmt =  // select social network of organization
   "where"
   "  organization = ?;";    // param1: organization id
 
+const SqliteQuery svc_stmt =  // select customers on specific vehicle
+  "select id from customers "
+  "where"
+  "  assignedTo = ?;";  // param1: vehicle id
+
 /* Update Customers. ---------------------------------------------------------*/
 const SqliteQuery ucs_stmt =  // update customer status
   "update customers set status = ? "  // param1: CustStatus

@@ -115,6 +115,7 @@ void Cargo::construct(const Options& opt) {
   prepare_stmt(sql::usc_stmt, &usc_stmt);
   prepare_stmt(sql::cwc_stmt, &cwc_stmt);
   prepare_stmt(sql::ssn_stmt, &ssn_stmt);
+  prepare_stmt(sql::svc_stmt, &svc_stmt);
   print(MessageType::Success) << "Cargo initialized!" << std::endl;
 }
 
@@ -139,6 +140,7 @@ Cargo::~Cargo() {
   sqlite3_finalize(usc_stmt);
   sqlite3_finalize(cwc_stmt);
   sqlite3_finalize(ssn_stmt);
+  sqlite3_finalize(svc_stmt);
 
   // NOTE: This only saves a snapshot of the final state
   if (database_file_ != "") {
