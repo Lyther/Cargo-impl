@@ -281,10 +281,12 @@ namespace cargo {
                       << si
                       << std::endl;
         });
+        bool valid = false;
+        if (si == 0) return true;
         for (const auto & s : sn)
             for (auto i : s.second)
-                if (si != 0 && i == new_cust && s.first != si) return false;
-        return true;
+                if (i == new_cust && s.first == si) valid = true;
+        return valid;
     }
 
     bool chkcap(const Load &capacity, const vec_t<Stop> &sch) {
