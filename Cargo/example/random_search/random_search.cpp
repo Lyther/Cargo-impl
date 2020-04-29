@@ -48,7 +48,8 @@ void RandomSearch::handle_customer(const Customer& cust) {
 
   for (const MutableVehicleSptr cand : this->candidates) {
     sop_insert(cand, cust, this->sch, this->rte);
-    if (chktw(this->sch, this->rte) && chkcap(cand->capacity(), this->sch)) {
+    if (chktw(this->sch, this->rte) && chkcap(cand->capacity(), this->sch)
+    && chksn(cand->vehicle_id(), cust.customer_id())) {
       this->end_ht();
       this->assign_or_delay({cust.id()}, {}, this->rte, this->sch, *cand);
       return;

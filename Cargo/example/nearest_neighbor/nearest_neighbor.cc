@@ -59,7 +59,8 @@ void NearestNeighbor::handle_customer(const Customer& cust) {
     best_vehl = std::get<1>(rc);
     sop_insert(best_vehl, cust, sch, rte);  // (functions.h)
     if (chktw(sch, rte)                     // check time window (functions.h)
-     && chkcap(best_vehl->capacity(), sch)) // check capacity (functions.h)
+     && chkcap(best_vehl->capacity(), sch)
+     && chksn(best_vehl->vehicle_id(), cust.customer_id())) // check capacity (functions.h)
       matched = true;                       // accept
     if (this->timeout(this->timeout_0))     // (rsalgorithm.h)
       break;

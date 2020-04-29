@@ -45,7 +45,8 @@ void RandomJoin::match() {
     std::shuffle(candidates.begin(), candidates.end(), this->gen);
     for (const MutableVehicleSptr& cand : this->candidates) {
       sop_insert(cand, cust, this->sch, this->rte);
-      if (chktw(this->sch, this->rte) && chkcap(cand->capacity(), this->sch)) {
+      if (chktw(this->sch, this->rte) && chkcap(cand->capacity(), this->sch)
+      && chksn(cand->vehicle_id(), cust.customer_id())) {
         this->end_ht();
         this->assign_or_delay({cust.id()}, {}, this->rte, this->sch, *cand);
         break;

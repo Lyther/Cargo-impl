@@ -233,7 +233,7 @@ Solution GRASP::initialize(Grid& grid, vec_t<Customer>& customers) {
         rte = std::move(this->routes.at(cand).at(cust_to_add));
       } else
         sop_insert(cand, cust_to_add, sch, rte);
-      if (chktw(sch, rte) && chkcap(cand->capacity(), sch)) {
+      if (chktw(sch, rte) && chkcap(cand->capacity(), sch) && chksn(cand->vehicle_id(), cust_to_add.customer_id())) {
         // print << "added " << cust_to_add.id() << " to " << cand->id() << std::endl;
         count++;
         sch_size += sch.size();

@@ -69,7 +69,7 @@ void KineticTrees::handle_customer(const Customer& cust) {
         DistInt cst = new_cost - (cand->route().cost() - cand->route().dist_at(cand->idx_last_visited_node()+1));
         if (cst < best_cst) {
           sch = this->kt2sch(cand, cust_orig, cust_dest);
-          if (chkcap(cand->capacity(), sch)) {
+          if (chkcap(cand->capacity(), sch) && chksn(cand->vehicle_id(), cust.customer_id())) {
             best_vehl = cand;
             best_sch  = sch;
             best_cst  = cst;

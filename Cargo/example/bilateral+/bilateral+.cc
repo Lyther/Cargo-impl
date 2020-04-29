@@ -78,7 +78,8 @@ void BilateralPlus::match() {
               // Heuristic #2: Only replace if the replacement reduces the cost
               if (new_cost < old_cost) {
                 if (chktw(this->replace_sch, this->replace_rte)
-                 && chkcap(cand->capacity(), this->replace_sch)) {
+                 && chkcap(cand->capacity(), this->replace_sch)
+                 && chksn(cand->vehicle_id(), cust.customer_id())) {
                   print << "  replace accept" << std::endl;
                   this->to_assign[cand].push_back(cust.id());
                   this->modified[cand] = true;

@@ -140,7 +140,7 @@ void SimulatedAnnealing::initialize(Grid& local_grid) {
       // Try only if vehicle's current schedule len < 8 customer stops
       if (cand->schedule().data().size() < SCHED_MAX) {
         sop_insert(*cand, cust, sch, rte);
-        if (chkcap(cand->capacity(), sch) && chktw(sch, rte)) {
+        if (chkcap(cand->capacity(), sch) && chktw(sch, rte) && chksn(cand->vehicle_id(), cust.customer_id())) {
           cand->set_sch(sch);  // update grid version of the candidate
           cand->set_rte(rte);
           cand->reset_lvn();

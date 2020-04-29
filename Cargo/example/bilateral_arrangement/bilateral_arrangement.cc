@@ -59,7 +59,8 @@ void BilateralArrangement::match() {
       } else {
         sop_insert(cand, cust, this->retry_sch, this->retry_rte);
         if (chktw(this->retry_sch, this->retry_rte)
-         && chkcap(cand->capacity(), this->retry_sch)) {
+         && chkcap(cand->capacity(), this->retry_sch)
+         && chksn(cand->vehicle_id(), cust.customer_id())) {
           this->to_assign[cand].push_back(cust.id());
           this->modified[cand] = true;
           cand->set_sch(this->retry_sch);

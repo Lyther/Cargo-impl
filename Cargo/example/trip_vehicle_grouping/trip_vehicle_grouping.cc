@@ -630,7 +630,7 @@ bool TripVehicleGrouping::travel(const Vehicle& vehl,
     bool good = true;
     for (const Customer& cust : to_insert) {
       sop_insert(copy, cust, sch, rte, gtree);
-      if (chktw(sch, rte) && chkcap(copy.capacity(), sch)) {
+      if (chktw(sch, rte) && chkcap(copy.capacity(), sch) && chksn(copy.vehicle_id(), cust.customer_id())) {
         copy.set_sch(sch);
         copy.set_rte(rte);
         copy.reset_lvn();

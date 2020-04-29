@@ -64,7 +64,7 @@ void Grabby::handle_customer(const Customer& cust) {
       cand, cust, temp_sched, temp_route);
     DistInt cost = cost_new - cost_old;
     if (cost < cost_min && chkcap(cand.capacity(), temp_sched)
-     && chktw(temp_sched, temp_route)) {
+     && chktw(temp_sched, temp_route) && chksn(cand.vehicle_id(), cust.customer_id())) {
       cost_min = cost;
       greedy_cand  = std::make_shared<MutableVehicle>(cand);
       greedy_sched = std::move(temp_sched);
