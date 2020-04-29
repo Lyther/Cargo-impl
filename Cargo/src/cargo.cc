@@ -76,6 +76,8 @@ SimlTime Cargo::t_ = 0;
 bool Cargo::paused_ = false;
 int Cargo::count_sp_ = 0;
 
+SocialNetwork Cargo::soclnet_ = {};
+
 /* Global mutexes */
 std::mutex Cargo::dbmx;
 std::mutex Cargo::spmx;
@@ -85,6 +87,8 @@ std::mutex Cargo::pause_mx;
 std::condition_variable Cargo::pause_cv;
 bool Cargo::static_mode = false;
 bool Cargo::strict_mode = false;
+
+dict<VehlId, vec_t<CustId>> Cargo::log_c_ = {};
 
 /* Shortest-paths cache: hash is stringified orig/dest pair */
 cache::lru_cache<std::string, vec_t<NodeId>> Cargo::spcache_(LRU_SP_CACHE_SIZE);

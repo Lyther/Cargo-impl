@@ -269,7 +269,7 @@ namespace cargo {
     }
 
     bool chksn(VehlId vid, CustId new_cust) {
-        vec_t<CustId> cur_cust = Cargo::svc(vid);
+        vec_t<CustId> cur_cust = Cargo::svc(vid)[vid];
         dict<SoclId, vec_t<CustId>> sn = Cargo::sn().networks();
         SoclId si = 0;
         for (const auto & s : sn)

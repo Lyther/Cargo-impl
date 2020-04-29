@@ -1,5 +1,5 @@
-INCLUDE_DIR = /home/andrea/Cargo/include
-CARGO_DIR = /home/andrea/Cargo/lib
+INCLUDE_DIR = ../include
+CARGO_DIR = ../lib
 METIS_DIR = /usr/local/lib
 # ------------------------------------------------------------------------------
 CXX = g++

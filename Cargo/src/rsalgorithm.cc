@@ -275,15 +275,16 @@ namespace cargo {
                 return false;
             }
 
-            if (!chksn(vehl.vehicle_id(), custs_to_add)) {
-                DEBUG(3, {
-                    print(MessageType::Error)
-                            << "assign() passengers failed due to social network"
-                            << std::endl;
-                });
-                this->nrej_++;
-                return false;
-            }
+            for (auto c : custs_to_add)
+                if (!chksn(vehl.vehicle_id(), c)) {
+                    DEBUG(3, {
+                        print(MessageType::Error)
+                                << "assign() passengers failed due to social network"
+                                << std::endl;
+                    });
+                    this->nrej_++;
+                    return false;
+                }
 
             DEBUG(3, {
                 print(MessageType::Info)
