@@ -61,6 +61,8 @@ class Cargo {
   static sqlite3       * db()                      { return db_; }
   static bool          & paused()                  { return paused_; }
   static int           & count_sp()                { return count_sp_; }
+  static vec_t<CustId> & svc(VehlId)               { return log_c_; }
+  static SocialNetwork & sn()                      { return soclnet_; }
 
   void start();                             // start simulation
   void start(RSAlgorithm &);                // start simulation
@@ -150,6 +152,7 @@ class Cargo {
 
   /* Logger containers */
   std::map<VehlId, vec_t<std::pair<NodeId, DistInt>>>  log_v_;
+  std::map<VehlId, vec_t<CustId>> log_c_;
   vec_t<CustId> log_p_, log_d_, log_t_;
   vec_t<VehlId> log_a_, log_l_;
 

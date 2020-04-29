@@ -172,10 +172,11 @@ class Customer : public Trip {
     CustStatus,    // status (see types.h)
     VehlId a = -1  // assigned vehicle (-1 means not assigned)
   );
-  const CustStatus & status()     const;  // return status (see types.h)
-  const VehlId     & assignedTo() const;  // return assigned vehicle
-        bool         assigned()   const;  // return TRUE if assigned
-        void         print()      const;  // print properties to standard out
+  const CustStatus & status()       const;  // return status (see types.h)
+  const VehlId     & assignedTo()   const;  // return assigned vehicle
+  const CustId     & customer_id()  const;  // return customer id
+        bool         assigned()     const;  // return TRUE if assigned
+        void         print()        const;  // print properties to standard out
 
   bool operator==(const Customer & rhs) const { return id_ == rhs.id_; }
   bool operator<(const Customer & rhs) const { return id_ < rhs.id_; }
@@ -183,6 +184,7 @@ class Customer : public Trip {
  private:
   CustStatus status_;
   VehlId assignedTo_;
+  CustId cid_;
 };
 
 /* Ridesharing Vehicle. ------------------------------------------------------*/

@@ -40,7 +40,7 @@ void Greedy::handle_customer(const Customer& cust) {
     if (cand->schedule().data().size() < 10) {
       DistInt cost = sop_insert(*cand, cust, sch, rte, Cargo::gtree()) - cand->route().cost();
       if (cost < this->best_cost) {
-        if (chkcap(cand->capacity(), sch) && chktw(sch, rte)) {
+        if (chkcap(cand->capacity(), sch) && chktw(sch, rte) && chksn(cand->vehicle_id(), cust.customer_id())) {
           this->best_vehl = cand;
           this->best_sch = sch;
           this->best_rte = rte;

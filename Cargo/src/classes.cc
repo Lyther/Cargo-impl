@@ -139,11 +139,13 @@ Customer::Customer(
 {
   this->status_ = f;
   this->assignedTo_ = a;
+  this->cid_ = owner;
 }
 
-const CustStatus & Customer::status()     const { return status_; }
-const VehlId     & Customer::assignedTo() const { return assignedTo_; }
-      bool         Customer::assigned()   const { return (assignedTo_ > 0); }
+const CustStatus & Customer::status()       const { return status_; }
+const VehlId     & Customer::assignedTo()   const { return assignedTo_; }
+const CustId     & Customer::customer_id()  const { return cid_; }
+      bool         Customer::assigned()     const { return (assignedTo_ > 0); }
 
 void Customer::print() const {
   std::cout

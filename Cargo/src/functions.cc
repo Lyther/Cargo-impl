@@ -268,11 +268,23 @@ namespace cargo {
         return true;
     }
 
-    bool chksn(VehlId vid, const vec_t<CustId> &cust) {
-        /* TODO: check the social network */
-        for (auto i : cust) {
-
-        }
+    bool chksn(VehlId vid, CustId new_cust) {
+        vec_t<CustId> cur_cust = Cargo::svc(vid);
+        dict<SoclId, vec_t<CustId>> sn = Cargo::sn().networks();
+        SoclId si = 0;
+        for (const auto & s : sn)
+            for (auto i : cur_cust)
+                for (auto j : s.second)
+                    if (i == j) si = s.first;
+        DEBUG(3, {
+            std::cout << "chksn() got current organization "
+                      << si
+                      << std::endl;
+        });
+        if (si == 0) return false;
+        for (const auto & s : sn)
+            for (auto i : s.second)
+                if (i == new_cust && s.first != si) return false;
         return true;
     }
 

@@ -178,6 +178,7 @@ int Cargo::step(int& ndeact) {
 
   /* Prepare logger containers */
   log_v_.clear(); // vehicle positions
+  log_c_.clear(); // customers per vehicle
   log_p_.clear(); // pickup events
   log_d_.clear(); // dropoff events
   log_l_.clear(); // load-change events
@@ -702,6 +703,18 @@ void Cargo::start(RSAlgorithm& rsalg) {
         << std::setw(8) << rsalg.matches() << " ("
           << std::setw(6) << std::roundf((rsalg.matches()/(float)total_customers_*100)*100)/(float)100 << "%)"
         << std::endl;
+
+      for (const auto& v : log_v_) {
+        sqlite3_bind_int(svc_stmt, 1, v.first);
+        while ((rc = sqlite3_step(svc_stmt)) == SQLITE_ROW)
+          log_c_[v.first].push_back(sqlite3_column_int(svc_stmt, 0));
+        if (rc != SQLITE_DONE) {
+          print(MessageType::Error) << "Failure in select vehicle customers. Reason:\n";
+          throw std::runtime_error(sqlite3_errmsg(db_));
+        }
+        sqlite3_clear_bindings(svc_stmt);
+        sqlite3_reset(svc_stmt);
+      }
 
       t1 = std::chrono::high_resolution_clock::now();
       dur = std::round(dur_milli(t1 - t0).count());
