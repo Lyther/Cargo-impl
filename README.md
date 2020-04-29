@@ -26,3 +26,18 @@ sudo apt install libglpk-dev
 ```
 
 ​	To generate organizations from instances, run the `create_organization.py` tool. The result is the social network file.
+
+​	Besides, you should generate GTree for specify road network using `gtreebuilder`, the output `.gtree` file should has the same name with `.rnet` file, and be put in the same folder.
+
+​	To re-compiler all the source code, you need to run following instructions:
+
+```bash
+cd Cargo/
+make clean
+make
+cd exmaple/
+make clean
+make
+```
+
+​	The `launcher` can be used to test algorithms.

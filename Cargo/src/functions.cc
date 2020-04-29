@@ -281,10 +281,9 @@ namespace cargo {
                       << si
                       << std::endl;
         });
-        if (si == 0) return false;
         for (const auto & s : sn)
             for (auto i : s.second)
-                if (i == new_cust && s.first != si) return false;
+                if (si != 0 && i == new_cust && s.first != si) return false;
         return true;
     }
 
