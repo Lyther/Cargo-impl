@@ -1,0 +1,561 @@
+########  10%  ########
+
+#######################
+###     FastInf     ###
+#######################
+
+Social network algorithm: BA
+Hidden information: 10%
+Total nodes: 1000
+Total connections: 1899
+Given connections: 1709
+
+========== 0 ==========
+Estimate connections: 1912
+True positive: 1861
+False negative: 38
+False positive: 51
+True negative: 499449.0
+Accuracy: 0.9998224966543611
+precision: 0.9733263598326359
+Recall: 0.9799894681411269
+F1 score: 0.9766465494620833
+
+========== 1 ==========
+Estimate connections: 1923
+True positive: 1866
+False negative: 33
+False positive: 57
+True negative: 499443.0
+Accuracy: 0.9998205022347472
+precision: 0.9703588143525741
+Recall: 0.9826224328593997
+F1 score: 0.976452119309262
+
+========== 2 ==========
+Estimate connections: 1976
+True positive: 1801
+False negative: 98
+False positive: 175
+True negative: 499325.0
+Accuracy: 0.9994555234453998
+precision: 0.9114372469635628
+Recall: 0.9483938915218536
+F1 score: 0.9295483870967742
+
+========== 3 ==========
+Estimate connections: 1915
+True positive: 1878
+False negative: 21
+False positive: 37
+True negative: 499463.0
+Accuracy: 0.9998843236623927
+precision: 0.9806788511749347
+Recall: 0.9889415481832543
+F1 score: 0.9847928683796539
+
+========== 4 ==========
+Estimate connections: 1901
+True positive: 1889
+False negative: 10
+False positive: 12
+True negative: 499488.0
+Accuracy: 0.9999561227684938
+precision: 0.9936875328774329
+Recall: 0.9947340705634544
+F1 score: 0.9942105263157895
+
+========== 5 ==========
+Estimate connections: 1954
+True positive: 1892
+False negative: 7
+False positive: 62
+True negative: 499438.0
+Accuracy: 0.9998623850466395
+precision: 0.9682702149437052
+Recall: 0.9963138493944181
+F1 score: 0.9820918764599014
+
+========== 6 ==========
+Estimate connections: 1997
+True positive: 1898
+False negative: 1
+False positive: 99
+True negative: 499401.0
+Accuracy: 0.999800558038608
+precision: 0.9504256384576866
+Recall: 0.9994734070563455
+F1 score: 0.9743326488706365
+
+========== 7 ==========
+Estimate connections: 1931
+True positive: 1876
+False negative: 23
+False positive: 55
+True negative: 499445.0
+Accuracy: 0.9998444352701142
+precision: 0.9715173485240808
+Recall: 0.9878883622959452
+F1 score: 0.9796344647519581
+
+========== 8 ==========
+Estimate connections: 1944
+True positive: 1887
+False negative: 12
+False positive: 57
+True negative: 499443.0
+Accuracy: 0.9998623850466395
+precision: 0.970679012345679
+Recall: 0.9936808846761453
+F1 score: 0.9820452771272443
+
+========== 9 ==========
+Estimate connections: 1915
+True positive: 1876
+False negative: 23
+False positive: 39
+True negative: 499461.0
+Accuracy: 0.9998763459839369
+precision: 0.9796344647519583
+Recall: 0.9878883622959452
+F1 score: 0.9837441006816989
+
+======== EVEN =========
+Accuracy: 0.9998185078151334
+Precision: 0.9670015484224251
+Recall: 0.9859926276987888
+F1 score: 0.9763498818455003
+
+======== BEST =========
+Accuracy: 0.9999561227684938
+Precision: 0.9936875328774329
+Recall: 0.9994734070563455
+F1 score: 0.9942105263157895
+
+======== WORST ========
+Accuracy: 0.9994555234453998
+Precision: 0.9114372469635628
+Recall: 0.9483938915218536
+F1 score: 0.9295483870967742
+
+#######################
+###      PGPI+      ###
+#######################
+
+Social network algorithm: BA
+Hidden information: 10%
+Total nodes: 1000
+Total connections: 1899
+Given connections: 1709
+
+========== 0 ==========
+Estimate connections: 1912
+True positive: 1896
+False negative: 3
+False positive: 16
+True negative: 499484.0
+Accuracy: 0.9999621060273355
+precision: 0.9916317991631799
+Recall: 0.9984202211690363
+F1 score: 0.9950144319076357
+
+#######################
+###        NB       ###
+#######################
+
+Social network algorithm: BA
+Hidden information: 10%
+Total nodes: 1000
+Total connections: 1899
+Given connections: 1709
+
+========== 0 ==========
+Estimate connections: 1997
+True positive: 1897
+False negative: 2
+False positive: 100
+True negative: 499400.0
+Accuracy: 0.9997965691993801
+precision: 0.9499248873309964
+Recall: 0.9989468141126909
+F1 score: 0.9738193018480493
+
+
+
+
+
+
+
+
+
+########  25%  ########
+
+#######################
+###     FastInf     ###
+#######################
+
+Social network algorithm: BA
+Hidden information: 25%
+Total nodes: 1000
+Total connections: 1899
+Given connections: 1424
+
+========== 0 ==========
+Estimate connections: 1971
+True positive: 1709
+False negative: 190
+False positive: 262
+True negative: 499238.0
+Accuracy: 0.999098522334508
+precision: 0.8670725520040589
+Recall: 0.8999473407056345
+F1 score: 0.883204134366925
+
+========== 1 ==========
+Estimate connections: 1998
+True positive: 1734
+False negative: 165
+False positive: 264
+True negative: 499236.0
+Accuracy: 0.9991443939856283
+precision: 0.8678678678678678
+Recall: 0.9131121642969984
+F1 score: 0.8899153194765204
+
+========== 2 ==========
+Estimate connections: 2000
+True positive: 1721
+False negative: 178
+False positive: 279
+True negative: 499221.0
+Accuracy: 0.9990885502364385
+precision: 0.8605
+Recall: 0.9062664560294892
+F1 score: 0.8827904590920749
+
+========== 3 ==========
+Estimate connections: 1943
+True positive: 1744
+False negative: 155
+False positive: 199
+True negative: 499301.0
+Accuracy: 0.9992939754566722
+precision: 0.8975810602161606
+Recall: 0.918378093733544
+F1 score: 0.9078604893284747
+
+========== 4 ==========
+Estimate connections: 1955
+True positive: 1782
+False negative: 117
+False positive: 173
+True negative: 499327.0
+Accuracy: 0.9994216183119631
+precision: 0.9115089514066497
+Recall: 0.9383886255924171
+F1 score: 0.9247535028541776
+
+========== 5 ==========
+Estimate connections: 2103
+True positive: 1824
+False negative: 75
+False positive: 279
+True negative: 499221.0
+Accuracy: 0.9992939754566722
+precision: 0.8673323823109843
+Recall: 0.9605055292259084
+F1 score: 0.9115442278860569
+
+========== 6 ==========
+Estimate connections: 1988
+True positive: 1712
+False negative: 187
+False positive: 276
+True negative: 499224.0
+Accuracy: 0.999076583718755
+precision: 0.8611670020120724
+Recall: 0.9015271195365983
+F1 score: 0.8808850012863391
+
+========== 7 ==========
+Estimate connections: 1964
+True positive: 1787
+False negative: 112
+False positive: 177
+True negative: 499323.0
+Accuracy: 0.9994236127315771
+precision: 0.909877800407332
+Recall: 0.9410215903106899
+F1 score: 0.9251876779704893
+
+========== 8 ==========
+Estimate connections: 1981
+True positive: 1801
+False negative: 98
+False positive: 180
+True negative: 499320.0
+Accuracy: 0.9994455513473302
+precision: 0.9091367995961636
+Recall: 0.9483938915218536
+F1 score: 0.9283505154639176
+
+========== 9 ==========
+Estimate connections: 2015
+True positive: 1809
+False negative: 90
+False positive: 206
+True negative: 499294.0
+Accuracy: 0.9994096517942797
+precision: 0.8977667493796526
+Recall: 0.95260663507109
+F1 score: 0.9243740419008687
+
+======== EVEN =========
+Accuracy: 0.9992696435373822
+Precision: 0.8849811165200941
+Recall: 0.9280147446024223
+F1 score: 0.9058865369625844
+
+======== BEST =========
+Accuracy: 0.9994455513473302
+Precision: 0.9115089514066497
+Recall: 0.9605055292259084
+F1 score: 0.9283505154639176
+
+======== WORST ========
+Accuracy: 0.999076583718755
+Precision: 0.8605
+Recall: 0.8999473407056345
+F1 score: 0.8808850012863391
+
+#######################
+###      PGPI+      ###
+#######################
+
+Social network algorithm: BA
+Hidden information: 25%
+Total nodes: 1000
+Total connections: 1899
+Given connections: 1424
+
+========== 0 ==========
+Estimate connections: 2123
+True positive: 1887
+False negative: 12
+False positive: 236
+True negative: 499264.0
+Accuracy: 0.9995053839357477
+precision: 0.8888365520489873
+Recall: 0.9936808846761453
+F1 score: 0.9383391347588265
+
+#######################
+###        NB       ###
+#######################
+
+Social network algorithm: BA
+Hidden information: 10%
+Total nodes: 1000
+Total connections: 1899
+Given connections: 1709
+
+========== 0 ==========
+Estimate connections: 1876
+True positive: 1801
+False negative: 98
+False positive: 75
+True negative: 499425.0
+Accuracy: 0.9996549654067918
+precision: 0.9600213219616205
+Recall: 0.9483938915218536
+F1 score: 0.9541721854304636
+
+
+
+
+
+
+
+
+
+########  50%  ########
+
+#######################
+###     FastInf     ###
+#######################
+
+Social network algorithm: BA
+Hidden information: 50%
+Total nodes: 1000
+Total connections: 1899
+Given connections: 949
+
+========== 0 ==========
+Estimate connections: 2271
+True positive: 1689
+False negative: 210
+False positive: 582
+True negative: 498918.0
+Accuracy: 0.9984204196657752
+precision: 0.7437252311756936
+Recall: 0.8894154818325435
+F1 score: 0.8100719424460433
+
+========== 1 ==========
+Estimate connections: 2133
+True positive: 1701
+False negative: 198
+False positive: 432
+True negative: 499068.0
+Accuracy: 0.9987435156432303
+precision: 0.7974683544303798
+Recall: 0.8957345971563981
+F1 score: 0.84375
+
+========== 2 ==========
+Estimate connections: 2287
+True positive: 1734
+False negative: 165
+False positive: 553
+True negative: 498947.0
+Accuracy: 0.9985680067172052
+precision: 0.7581985133362483
+Recall: 0.9131121642969984
+F1 score: 0.8284758719541327
+
+========== 3 ==========
+Estimate connections: 2345
+True positive: 1787
+False negative: 112
+False positive: 558
+True negative: 498942.0
+Accuracy: 0.9986637388586734
+precision: 0.762046908315565
+Recall: 0.9410215903106899
+F1 score: 0.8421300659754948
+
+========== 4 ==========
+Estimate connections: 2109
+True positive: 1684
+False negative: 215
+False positive: 425
+True negative: 499075.0
+Accuracy: 0.998723571447091
+precision: 0.7984826932195354
+Recall: 0.8867825171142707
+F1 score: 0.8403193612774451
+
+========== 5 ==========
+Estimate connections: 1992
+True positive: 1604
+False negative: 295
+False positive: 388
+True negative: 499112.0
+Accuracy: 0.9986378114036925
+precision: 0.8052208835341366
+Recall: 0.8446550816219063
+F1 score: 0.8244667180673348
+
+========== 6 ==========
+Estimate connections: 2135
+True positive: 1634
+False negative: 265
+False positive: 501
+True negative: 498999.0
+Accuracy: 0.9984722745757371
+precision: 0.7653395784543325
+Recall: 0.8604528699315429
+F1 score: 0.8101140307387208
+
+========== 7 ==========
+Estimate connections: 2202
+True positive: 1731
+False negative: 168
+False positive: 471
+True negative: 499029.0
+Accuracy: 0.9987255658667049
+precision: 0.7861035422343324
+Recall: 0.9115323854660348
+F1 score: 0.8441843452816387
+
+========== 8 ==========
+Estimate connections: 2509
+True positive: 1813
+False negative: 86
+False positive: 696
+True negative: 498804.0
+Accuracy: 0.9984403638619144
+precision: 0.7225986448784376
+Recall: 0.9547130068457083
+F1 score: 0.8225952813067151
+
+========== 9 ==========
+Estimate connections: 2495
+True positive: 1806
+False negative: 93
+False positive: 689
+True negative: 498811.0
+Accuracy: 0.9984403638619144
+precision: 0.7238476953907815
+Recall: 0.9510268562401264
+F1 score: 0.8220300409649521
+
+======== EVEN =========
+Accuracy: 0.9985835631901938
+Precision: 0.7663032044969442
+Recall: 0.9048446550816219
+F1 score: 0.8288137658012478
+
+======== BEST =========
+Accuracy: 0.9987435156432303
+Precision: 0.8052208835341366
+Recall: 0.9547130068457083
+F1 score: 0.8441843452816387
+
+======== WORST ========
+Accuracy: 0.9984204196657752
+Precision: 0.7225986448784376
+Recall: 0.8446550816219063
+F1 score: 0.8100719424460433
+
+#######################
+###      PGPI+      ###
+#######################
+
+Social network algorithm: BA
+Hidden information: 50%
+Total nodes: 1000
+Total connections: 1899
+Given connections: 949
+
+========== 0 ==========
+Estimate connections: 2174
+True positive: 1831
+False negative: 68
+False positive: 343
+True negative: 499157.0
+Accuracy: 0.9991802935386788
+precision: 0.8422263109475621
+Recall: 0.9641916798314902
+F1 score: 0.8990915786889271
+
+#######################
+###        NB       ###
+#######################
+
+Social network algorithm: BA
+Hidden information: 50%
+Total nodes: 1000
+Total connections: 1899
+Given connections: 949
+
+========== 0 ==========
+Estimate connections: 2289
+True positive: 1631
+False negative: 268
+False positive: 658
+True negative: 498842.0
+Accuracy: 0.9981531674375098
+precision: 0.7125382262996942
+Recall: 0.8588730911005793
+F1 score: 0.7788920725883478
